@@ -1,698 +1,507 @@
-<!DOCTYPE HTML>
-<!--
-	Strata by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<title>Masdika Aliman: Portfolio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masdika Aliman: Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9fafb;
+            color: #333;
+        }
 
-	<!-- Font Awesome -->
-	<!-- Latest Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        header {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: url("image/TEAM_BG.jpg") no-repeat center center/cover;
+            /* background: linear-gradient(to right, #3b82f6, #6366f1); */
+            color: white;
+            position: relative;
+        }
 
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link href="images/r.JPG" rel="icon">
-	<style>
-		video {
-			width: 100%;
+        header img {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
 
-		}
-	</style>
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            /* Optional dark overlay */
+        }
+
+        header * {
+            position: relative;
+            /* So text/images stay above overlay */
+        }
+
+        header h1 {
+            margin-top: 1rem;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        header .links a {
+            margin: 0 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 3rem 1rem;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects,
+        .achievements {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .projects {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .achievements {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+        }
+
+        .card-content h3 {
+            margin: 0.5rem 0;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            margin: 0.2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #333;
+        }
+
+        /* Contact */
+        .contact {
+            background: #f3f4f6;
+        }
+
+        .contact-card {
+            background: #fff;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .contact-item h3 {
+            margin: 0 0 .25rem 0;
+            font-size: 1rem;
+            color: #111827;
+        }
+
+        .link-pill {
+            display: inline-block;
+            background: #eef2ff;
+            padding: .4rem .7rem;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #3730a3;
+            font-size: .9rem;
+            word-break: break-all;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #e5e7eb;
+            margin-top: 2rem;
+        }
+
+        .icon {
+            text-decoration: none;
+            border-bottom: none;
+            position: relative;
+        }
+
+        .icon:before {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+            text-transform: none !important;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 400;
+        }
+
+        .icon>.label {
+            display: none;
+        }
+
+        .icon:before {
+            line-height: inherit;
+        }
+
+        .icon.solid:before {
+            font-weight: 900;
+        }
+
+        .icon.brands:before {
+            font-family: 'Font Awesome 5 Brands';
+        }
+    </style>
 </head>
 
-<body class="is-preload">
-	<!-- Header -->
-	<header id="header">
-		<div class="inner">
-			<a href="index.html" class="image avatar"><img src="image/foto_diri.jpg" alt="" /></a>
-			<h1><strong>Masdika Aliman</strong>
-				<p class="intro-subtitle">
-					Students Robotic Engineer<br></br>
-					<br><b>Bachelor of Robotics Engineering</b></br>
-					<i>Politeknik Negeri Batam</i><br>
-			</h1>
-		</div>
-	</header>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="image/foto_diri.jpg" alt="Profile" />
+        <h1>Masdika Aliman</h1>
+        <p>Robotics Engineering Student | Soccer Robot Team Member | Tech Enthusiast</p>
+        <div class="links">
+            <a href="https://github.com/MasdikaAliman" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:masdikaaliman@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.youtube.com/@masdikaaliman6425/videos" target="_blank"><i
+                    class="fab fa-youtube"></i></a>
+        </div>
+    </header>
 
-	<!-- Main -->
-	<div id="main">
+    <!-- About -->
+    <section>
+        <h2>About Me</h2>
+        <p style="text-indent:40px;">
+            Hello! My name is Masdika Aliman, and I am an undergraduate student majoring in Robotics Engineering at
+            Politeknik Negeri Batam. I am an active member of the Middle-Sized League (MSL) Soccer Robot Team at the
+            Barelang Robotics and Artificial Intelligence Laboratory (BRAIL), where I contribute to advanced robotics
+            systems, including localization, object detection, kinematics, control systems, and navigation systems. I am
+            passionate about innovation and applying my skills to solve real-world technical challenges.
+        </p>
+    </section>
 
-		<!-- One -->
-		<section id="one">
-			<header class="major">
-				<font color="black">
-					<h2>About Me
-				</font>
-				</h2>
-			</header>
-			<font color="black">
-				<p style="text-indent: 40px">Hello! My name is Masdika Aliman, and I am an undergraduate student
-					majoring in Electrical Engineering with a focus on Robotics at
-					Batam State Polytechnic. I am an active member of the
-					Middle-Sized League (MSL) Soccer Robot Team at the Barelang Robotics and Artificial Intelligence
-					Laboratory
-					(BRAIL), where I contribute to the development of advanced robotics systems,
-					including localization, object detection, kinematics, control systems, and navigation systems. With
-					a passion
-					for innovation and problem-solving, I am enthusiastic about applying my skills to real-world
-					technical challenges
-					and collaborative projects.</p>
-			</font>
-		</section>
+    <!-- Projects -->
+    <section style="background:#f3f4f6;">
+        <h2>Project History</h2>
+        <div class="projects">
+            <div class="card">
+                <img src="image/Middle_Size_League_MSL_Webots_Simulator.gif" alt="MSL Webots Simulation" />
+                <div class="card-content">
+                    <h3>Simulate Middle League Soccer in Webots</h3>
+                    <p>Strategy simulation, navigation, kinematics, localization, and object detection in Webots.</p>
+                    <a href="https://www.youtube.com/watch?v=g1v5L_ZcZvg" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
+            <div class="card">
+                <img src="image/NAV2_SLAM_HUMBLE.gif" alt="ROS2 Nav2 Differential Robot" />
+                <div class="card-content">
+                    <h3>ROS2 Nav2 Differential Wheels Robot</h3>
+                    <p>URDF models, Nav2 implementation, and simulation in Gazebo.</p>
+                    <a href="https://www.youtube.com/watch?v=qFAHRWaCxx8" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-		<section id="two">
-			<header class="major">
-				<h2>
-					<font color="black">Projects</font>
-				</h2>
-			</header>
-			<div class="container">
-				<div class="row">
+            <div class="card">
+                <img src="image/APF_DATA.gif" alt="Potential Field" />
+                <div class="card-content">
+                    <h3>Implement Artificial Potential Field</h3>
+                    <p>Create Algorithm, Local minima solution in C++.</p>
+                </div>
+            </div>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=g1v5L_ZcZvg&autoplay=1" target="_blank">
-							<img src="image/Middle_Size_League_MSL_Webots_Simulator.gif"
-								alt="Middle_Size_League_MSL_Webots_Simulator" class="image fit thumb">
-						</a>
+            <div class="card">
+                <img src="image/Gazebo_Simulator_Wheel_Robot_Soccer.gif"
+                    alt="Implement Djikstra Voronoi Robot Soccer" />
+                <div class="card-content">
+                    <h3>Implement Djikstra Voronoi Robot Soccer</h3>
+                    <p>Create Algorithm, Kinematic modeled, Simulate.</p>
+                    <a href="https://www.youtube.com/watch?v=g1v5L_ZcZvg&autoplay=1" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Simulate Middle League Soccer in Webots</u></font>
-						</h3>
-						<p>
-							<font color="black">Simulate Middle League Soccer in Webots
-								<ul>
-									<li>
-										<p>Create Strategy Robot and Simulate that in webots</p>
-									</li>
-									<li>
-										<p>Implement Navigation System of Robot</p>
-									</li>
-									<li>
-										<p>Implement Kinematic and Control System
-										</p>
-									</li>
-									<li>
-										<p>Implement the localization and object detection
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">localization</font></code>
-							<code><font color="Red">Kinematics</font></code>
-							<code><font color="Red">webots</font></code>
-							<code><font color="Red">Navigation</font></code>
-						</p>
-					</article>
+            <div class="card">
+                <img src="image/D_STAR.png" alt="D* Algorithm Motion Planning" />
+                <div class="card-content">
+                    <h3>Motion Planning D* Algorithm</h3>
+                    <p>Grid Map, D*, OpenCV.</p>
+                </div>
+            </div>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=qFAHRWaCxx8&autoplay=1" target="_blank">
-							<img src="image/NAV2_SLAM_HUMBLE.gif" alt="ROS2 Nav Dif Robot" class="image fit thumb">
-						</a>
+            <div class="card">
+                <img src="image/Praktikum_5_RE503_Manipulator.gif" alt="UR Robotic Arm" />
+                <div class="card-content">
+                    <h3>Operate and Program UR Robotic Arm</h3>
+                    <p>Programming and operating UR manipulators with real-time control.</p>
+                    <a href="https://www.youtube.com/watch?v=_GTbrSdJqvQ" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/EPSON.gif" alt="EPSON SCARA" />
+                <div class="card-content">
+                    <h3>Operate and Program Epson SCARA Robot</h3>
+                    <p>EPSON RC+ Programming, Adding Sensor, and Implement Pick and Place.</p>
+                    <a href="https://www.youtube.com/watch?v=_GTbrSdJqvQ" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>ROS Nav2 Differential Wheels Robot</u></font>
-						</h3>
-						<p>
-							<font color="black">Implement Nav2 Package on Differential Wheels Robot
-								<ul>
-									<li>
-										<p>Implement URDF models on Gazebo</p>
-									</li>
-									<li>
-										<p>Implemented Nav2 Package</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Gazebo
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Differential Drive Robot</font></code>
-							<code><font color="Red">ROS</font></code>
-							<code><font color="Red">Gazebo</font></code>
-						</p>
-					</article>
+            <div class="card">
+                <img src="image/Mechanum_wheel_robot_Fuzzy_Logic_Control.gif" alt="Mechanum Robot Fuzzy Control" />
+                <div class="card-content">
+                    <h3>Mechanum Robot Fuzzy Control</h3>
+                    <p>Modeled kinematics and implemented fuzzy control in Webots.</p>
+                    <a href="https://www.youtube.com/watch?v=2i0kHbzJ374" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
+            <div class="card">
+                <img src="image/FINAL_PROJECT_ROS_SIMULATION_GAZEBO_RE402.gif" alt="Traciking Ball Robot" />
+                <div class="card-content">
+                    <h3>Tracking Ball Robot Gazebo Sim</h3>
+                    <p>Diffrential Drive Kinematic,ROS-noetic, Color Segmentation,Simulate in Gazebo.</p>
+                    <a href="https://www.youtube.com/watch?v=FSDU7hDYXl0&autoplay=1" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/Potential Field.png" alt="Potential Field" class="image fit thumb">
-						</a>
+            <div class="card">
+                <img src="image/WALL_FOLLOWING_LIDAR_Webots_Mechanum_Robots.gif"
+                    alt="WALL_FOLLOWING_LIDAR_Webots_Mechanum_Robots" />
+                <div class="card-content">
+                    <h3>Wall Following Robot Webots</h3>
+                    <p>Modeled kinematics, implemented PID control, Simulated in Webots.</p>
+                    <a href="https://www.youtube.com/watch?v=2i0kHbzJ374" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement Artificial Potential Field</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Create Algorithm Artificial Potential Field in C++ Program</p>
-									</li>
-									<li>
-										<p>Create a local minima solution on Algorithm</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Motion Planning</font></code>
-							<code><font color="Red">Artificial Potential Field</font></code>
-						</p>
-					</article>
+            <div class="card">
+                <img src="image/TRAJECTORY PLANNER.png" alt="Trajectory Planner" />
+                <div class="card-content">
+                    <h3>Implement Trajectory Planner in Robot Soccer</h3>
+                    <p>accelaration control to perform smooth motion robot.</p>
+                </div>
+            </div>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=g1v5L_ZcZvg&autoplay=1" target="_blank">
-							<img src="image/Gazebo_Simulator_Wheel_Robot_Soccer.gif"
-								alt="Implement Djikstra Voronoi Robot Soccer" class="image fit thumb">
-						</a>
+            <div class="card">
+                <img src="image/run_ssd_example_output.jpg" alt="PLATE Detection" />
+                <div class="card-content">
+                    <h3>Object Detection and Optical Character Recognition (OCR)</h3>
+                    <p>jetson-inference, and PaddleOCR implementation.</p>
+                </div>
+            </div>
 
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement Djikstra Voronoi Robot Soccer</u></font>
-						</h3>
-						<p>
-							<font color="black">Implement Djikstra Voronoi Robot Soccer
-								<ul>
-									<li>
-										<p>Implemented Djikstra and Voronoi</p>
-									</li>
-									<li>
-										<p>Modeled Kinematic Robot Omniwheel</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Gazebo
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Motion Planning</font></code>
-							<code><font color="Red">Kinematics</font></code>
-							<code><font color="Red">Gazebo</font></code>
-						</p>
-					</article>
+            <div class="card">
+                <img src="image/Line_Detection_Robot_Soccer_Barelang63.gif" alt="Line Detection" />
+                <div class="card-content">
+                    <h3>Line Detection using Color Segmentation</h3>
+                    <p>OpenCV library, Segmentation, Scan line.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=VdKO0T-zQN0&autoplay=1" target="_blank"
+                    class="btn btn-secondary">Video</a>
+            </div>
 
+            <div class="card">
+                <img src="image/HALCON_Deep_Learning_Object_Detection.gif" alt="Line Detection" />
+                <div class="card-content">
+                    <h3>Object Detection Using Halcon DeepLearning</h3>
+                    <p>DeepLearning, Halcon Software.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=NNUaPtVW8rk" target="_blank"
+                    class="btn btn-secondary">Video</a>
+            </div>
+            <div class="card">
+                <img src="image/Circle_Track_Omniwheel_Robot.gif" alt="Mechanum Robot Fuzzy Control" />
+                <div class="card-content">
+                    <h3>Implement Kinematic Omniwheel Robot</h3>
+                    <p>Modeled kinematics, PID Controller, Simulated Robot in Webots.</p>
+                    <a href="https://youtube.com/shorts/LhrYNLJFEvw?si=FvQ9YWW-FDP_nYnc&autoplay=1" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/FINAL_PROJECT_ROS_SIMULATION_GAZEBO_RE402.gif" alt="TRACKING BALL" />
+                <div class="card-content">
+                    <h3>Tracking Ball Robot Gazebo Sim</h3>
+                    <p>Modeled the kinematic Differential Drive Robot, Implemented Color Segmentation for Object
+                        Detection, Build Robot Based ROS-Noetic, Simulated the robot in Gazebo.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=FSDU7hDYXl0&autoplay=1" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/character_svm.png" alt="SVM_CLASSIFICATION" />
+                <div class="card-content">
+                    <h3>Character Classification using Machine Learning</h3>
+                    <p>Train and Validate data using python-sklearn, Implement Support Vector Machine.
+                    </p>
+                    <a href="https://github.com/MasdikaAliman/character_classification_svm" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/CNN.png" alt="CNN_CLASSIFICATION" />
+                <div class="card-content">
+                    <h3>Implement Object Classification Using CNN</h3>
+                    <p>Convolutional Neural Network (CNN), Transfer Learning.
+                    </p>
+                    <a href="https://github.com/MasdikaAliman/Garbage-Classification-CNN/tree/master" target="_blank"
+                        class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/D_STAR.png" alt="Potential Field" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement D* Algorithm</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Create a grid map</p>
-									</li>
-									<li>
-										<p>Create a D* Algorithm for Path Planning</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Motion Planning</font></code>
-							<code><font color="Red">D* Algorithm</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=_GTbrSdJqvQ&autoplay=1" target="_blank">
-							<img src="image/Praktikum_5_RE503_Manipulator.gif" alt="Operate UR Manipulator"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Operate And Program UR Robotic Arm</u></font>
-						</h3>
-						<p>
-							<font color="black">Operate And Program UR Robotic Arm
-								<ul>
-									<li>
-										<p>Program and Teach Point UR Manipulator</p>
-									</li>
-									<li>
-										<p>Operate UR Manipulator
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">UR Robotics</font></code>
-							<code><font color="Red">Arm Robot</font></code>
-							<code><font color="Red">Operate Robot</font></code>
-						</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=2i0kHbzJ374&autoplay=1" target="_blank">
-							<img src="image/Mechanum_wheel_robot_Fuzzy_Logic_Control.gif" alt="Mechanum Robot"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Mechanum Robot Fuzzy Control</u></font>
-						</h3>
-						<p>
-							<font color="black">Implement Kinematic and Fuzzy Control Mechanum on Webots Simulator
-								<ul>
-									<li>
-										<p>Modeled the Forward & Inverse Kinematics Mechanum Robot</p>
-									</li>
-									<li>
-										<p>Implemented Fuzzy Control to tracking current position and goal robot</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Webots to perform test & Analysis of Kinematics &
-											System
-											Control.
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Mechanum Robot</font></code>
-							<code><font color="Red">Kinematics</font></code>
-							<code><font color="Red">Simulation</font></code>
-							<code><font color="Red">FuzzyControl</font></code>
-						</p>
-					</article>
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://youtube.com/shorts/LhrYNLJFEvw?si=FvQ9YWW-FDP_nYnc&autoplay=1" target="_blank">
-							<img src="image/Circle_Track_Omniwheel_Robot.gif" alt="Kinematic Robot Soccer"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement Kinematic Omniwheel Robot</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Modeled the Forward & Inverse Kinematics Omniwheel Robot</p>
-									</li>
-									<li>
-										<p>Implemented PID Controller</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Webots
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Omniwheel Robot</font></code>
-							<code><font color="Red">Webots</font></code>
-							<code><font color="Red">Kinematics</font></code>
-						</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=FSDU7hDYXl0&autoplay=1" target="_blank">
-							<img src="image/FINAL_PROJECT_ROS_SIMULATION_GAZEBO_RE402.gif" alt="TRACKING BALL"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Tracking Ball Robot Gazebo Sim</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Modeled the kinematic Differential Drive Robot</p>
-									</li>
-									<li>
-										<p>Implemented Color Segmentation for Object Detection</p>
-									</li>
-									<li>
-										<p>Build Robot Based ROS-Noetic
-										</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Gazebo
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Differential Drive</font></code>
-							<code><font color="Red">ROS</font></code>
-							<code><font color="Red">Kinematics</font></code>
-							<code><font color="Red">Object Detections</font></code>
-						</p>
-					</article>
+            <div class="card">
+                <img src="image/skin disease.png" alt="skin_disease" />
+                <div class="card-content">
+                    <h3>Skin disease Prediction Machine Learning</h3>
+                    <p>K-Nearest Neighbor (KNN) Algorithm, Image Feature Extraction.
+                    </p>
+                    <a href="index.html" target="_blank" class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/compost_quality.png" alt="skin_disease" />
+                <div class="card-content">
+                    <h3>Compost Quality Prediction Machine Learning</h3>
+                    <p>K-Nearest Neighbor (KNN) Algorithm, Feature Engineering and GridSearchCV.
+                    </p>
+                    <a href="index.html" target="_blank" class="btn btn-secondary">Video</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/UI.gif" alt="skin_disease" />
+                <div class="card-content">
+                    <h3>Create UI to Monitor and Control Robot Soccer</h3>
+                    <p>QT5 C++, Integrate UI with Real Robot.
+                    </p>
+                    <a href="index.html" target="_blank" class="btn btn-secondary">Video</a>
+                </div>
+            </div>
 
 
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=g1R-jvAa5fE&autoplay=1" target="_blank">
-							<img src="image/WALL_FOLLOWING_LIDAR_Webots_Mechanum_Robots.gif"
-								alt="WALL_FOLLOWING_LIDAR_Webots_Mechanum_Robots" class="image fit thumb">
-						</a>
+        </div>
+    </section>
 
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Wall Following Robot Webots</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Modeled the kinematic Mechanum Robot</p>
-									</li>
-									<li>
-										<p>Implement PID Controller</p>
-									</li>
-									<li>
-										<p>Simulated the robot in Webots
-										</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Mechanum Robot</font></code>
-							<code><font color="Red">PID Controller</font></code>
-							<code><font color="Red">Kinematics</font></code>
+    <!-- Achievements -->
+    <!-- <section>
+        <h2>Achievements</h2>
+        <div class="achievements">
+            <div class="card">
+                <img src="image/ach1.jpg" alt="Hackathon Winner" />
+                <div class="card-content">
+                    <h3 style="text-align:center;">Hackathon Winner</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/ach2.jpg" alt="Best Robotics Project" />
+                <div class="card-content">
+                    <h3 style="text-align:center;">Best Robotics Project</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="image/ach3.jpg" alt="Dean's List" />
+                <div class="card-content">
+                    <h3 style="text-align:center;">Dean's List</h3>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
-						</p>
-					</article>
+    <!-- Five -->
+    <section id="Four">
+        <h2>Contact</h2>
+        <div class="col-4 col-12-small">
+            <ul class="labeled-icons">
+                <li>
+                    <h3 class="icon fab fa-home"><span class="label">Address</span></h3>
+                    Batam, Indonesia
+                </li>
+                <li>
+                    <h3 class="icon fa-envelope"><span class="label">Email</span></h3>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=masdikaaliman@gmail.com"
+                        target="_blank">masdikaaliman@gmail.com</a>
+                </li>
+            </ul>
+        </div>
 
+    </section>
 
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/TRAJECTORY PLANNER.png" alt="TRAJECTORY PLANNER" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement Trajectory Planner in Robot Soccer</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Analysis the accelaration robot to perform smooth motion</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Trajectory Planner</font></code>
-							<code><font color="Red">Control System</font></code>
-							<code><font color="Red">Motion</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/run_ssd_example_output.jpg" alt="plate detection" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Plate Detection and Optical Character Recognition (OCR)</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Object Detection using jetson-inference</p>
-									</li>
-									<li>
-										<p>OCR using PaddleOCR Library</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Object Detection</font></code>
-							<code><font color="Red">Optical Character Recognition</font></code>
-							<code><font color="Red">jetson-inference</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=VdKO0T-zQN0&autoplay=1" target="_blank">
-							<img src="image/Line_Detection_Robot_Soccer_Barelang63.gif" alt="Line detection"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Line Detection using Segmentation</u></font>
-						</h3>
-						<p>
-							<font color="black">Implement Object Detection using Segmentation
-								<ul>
-									<li>
-										<p>Line detection using segmentation Open CV Library</p>
-									</li>
-									<li>
-										<p>Using Scan Line to detect actual position</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Object Detection</font></code>
-							<code><font color="Red">Computer Vision</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://www.youtube.com/watch?v=VdKO0T-zQN0&autoplay=1" target="_blank">
-							<img src="image/HALCON_Deep_Learning_Object_Detection.gif" alt="Object detection"
-								class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Object Detection Using Halcon DeepLearning</u></font>
-						</h3>
-						<p>
-							<font color="black">Implement Object Detection using DeepLearning
-								<ul>
-									<li>
-										<p>Object Detection using Deep Learning</p>
-									</li>
-									<li>
-										<p>Train and validate data on Halcon Software</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Object Detection</font></code>
-							<code><font color="Red">Computer Vision</font></code>
-							<code><font color="Red">DeepLearning</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://github.com/MasdikaAliman/character_classification_svm" target="_blank">
-							<img src="image/character_svm.png" alt="character_svm" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Character Classification using Support Vector Machine</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Train and Validate data using python-sklearn </p>
-									</li>
-									<li>
-										<p>Implement Support Vector Machine</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Machine Learning</font></code>
-							<code><font color="Red">Support Vector Machine</font></code>
-						</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/skin disease.png" alt="UI" class="Skin disease">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Skin disease Prediction Machine Learning</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Use KNN Algorithm to Predict Disease</p>
-									</li>
-									<li>
-										<p>Implement Image Feature Extraction</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Machine Learning</font></code>
-							<code><font color="Red">K-Nearest Neighbor</font></code>
-						</p>
-					</article>
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/UI.gif" alt="UI" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Create UI to Monitor and Control Robot Soccer</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Create UI based QT5 C++</p>
-									</li>
-									<li>
-										<p>Integrate UI with Real Robot</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">QT5</font></code>
-							<code><font color="Red">User Interface</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/AUTOGEN_STRATEGY.png" alt="AUTOGEN_STRATEGY" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Create UI to Generate Strategy Robot</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Create UI to generate xml file for Behavior Tree</p>
-									</li>
-									<li>
-										<p>QT5 based C++</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">QT5</font></code>
-							<code><font color="Red">User Interface</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="https://github.com/MasdikaAliman/Garbage-Classification-CNN/tree/master"
-							target="_blank">
-							<img src="image/CNN.png" alt="CNN" class="image fit thumb">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Implement Object Classification Using CNN</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Object Classification using CNN and Transfer Learning</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">CNN</font></code>
-							<code><font color="Red">Object Classification</font></code>
-						</p>
-					</article>
-
-
-					<article class="col-6 col-12-xsmall work-item">
-						<a href="index.html" target="_blank">
-							<img src="image/compost_quality.png" alt="UI" class="compost_quality">
-						</a>
-
-						<h3 style="font-family:verdana;">
-							<font color="black"><u>Compost Quality Prediction Machine Learning</u></font>
-						</h3>
-						<p>
-							<font color="black">
-								<ul>
-									<li>
-										<p>Use KNN Algorithm to Predict Compost Quality</p>
-									</li>
-									<li>
-										<p>Implement EDA, Feature Engineering and GridSearchCV</p>
-									</li>
-								</ul>
-							</font>
-						<p>
-							<code><font color="Red">Machine Learning</font></code>
-							<code><font color="Red">K-Nearest Neighbor</font></code>
-						</p>
-					</article>
-
-				</div>
-			</div>
-		</section>
-
-		<!-- Five -->
-		<section id="Four">
-			<h2>Contact</h2>
-			<div class="col-4 col-12-small">
-				<ul class="labeled-icons">
-					<li>
-						<h3 class="icon solid fa-home"><span class="label">Address</span></h3>
-						Batam, Indonesia
-					</li>
-					<li>
-						<h3 class="icon solid fa-envelope"><span class="label">Email</span></h3>
-						<a href="https://mail.google.com/mail/?view=cm&fs=1&to=masdikaaliman@gmail.com"
-							target="_blank">masdikaaliman@gmail.com</a>
-					</li>
-				</ul>
-			</div>
-	</div>
-	</section>
-
-
-	<!-- Footer -->
-	<footer id="footer">
-		<div class="inner">
-			<ul class="icons">
-				<li><a href="https://github.com/MasdikaAliman" target="_blank" class="icon brands fa-github"><span
-							class="label">Github</span></a></li>
-				<li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=masdikaaliman@gmail.com" target="_blank"
-						class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-				<li><a href="https://www.youtube.com/@masdikaaliman6425/videos" target="_blank"
-						class="fab fa-youtube fa-2x"></a></li>
-				<!-- <li><a href="raj0407@umd.edu" target="_blank" class="icon solid fa-linkedin"><span
-							class="label">Email</span></a></li> -->
-			</ul>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.poptrox.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Masdika Aliman. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
